@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Zadanie 3</title>
+	<link href="arkusz-cwiczenia.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	P = ( <input type="number" id="x"> , <input type="number" id="y"> )
+
+	<input type="submit" value="Sprawdź ćwiartkę" onclick="ktora_cwiartka()">
+
+	<div id="wynik"></div>
+	
+	<script>
+	
+		function ktora_cwiartka()
+		{
+			let x = document.getElementById("x").value;
+			let y = document.getElementById("y").value;
+			
+			if(x == 0 && y == 0){
+				info = 'Punkt P=(0,0) jest początkiem układu współrzędnych';
+			}else if(x == 0  || y == 0){
+				info = 'Punkt leży na jednej z osi układu';
+			}else if(x == 15 && y == 96){
+				info = 'René Descartes, urodzony 31 marca 1596 roku we Francji, był wybitnym filozofem i matematykiem epoki nowożytnej. Znany jako Kartezjusz, jego wpływ na rozwój filozofii i nauki był znaczący. Jego najbardziej znane dzieło to "Medytacje o pierwszej filozofii", gdzie sformułował zasadę "Cogito, ergo sum" (Myślę, więc jestem). Descartes odegrał również istotną rolę w rozwoju algebraicznej geometrii. Zmarł 11 lutego 1650 roku w Szwecji, pozostawiając trwałe dziedzictwo jako jeden z kluczowych myślicieli okresu kartezjańskiego.';
+				document.getElementById("wynik").style.color = "orange";
+			}else if(x > 0 && y > 0){
+				info = '1 Cwiartka';
+			}else if(x < 0 && y > 0){
+				info = '2 Cwiartka'; 
+			}else if(x < 0 && y < 0){
+				info = '3 Cwiartka';
+			}else if(x > 0 && y < 0){
+				info = '4 Cwiartka';
+			}else {
+				info = 'Błąd';
+			}
+
+			document.getElementById("wynik").innerHTML = info;
+		}
+
+	</script>
+
+</body>
+</html>

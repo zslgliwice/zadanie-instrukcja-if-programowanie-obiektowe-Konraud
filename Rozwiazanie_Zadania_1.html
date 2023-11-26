@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Zadanie1</title>
+	<link href="arkusz-cwiczenia.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	<label>
+		Podaj numer dnia tygodnia: <input type="number" id="cyfra">
+	</label>
+	
+	<input type="submit" value="Zobacz nazwę dnia" onclick="getDayName()">
+
+	<div id="wynik"></div>
+	
+	<script>
+	
+		function getDayName()
+		{
+			var numer_dnia = document.getElementById("cyfra").value;
+			var info = "";
+			numer = parseInt(numer_dnia);
+
+			document.getElementById("wynik").style.color = "white";
+
+			if(numer == 1){
+				info = 'Pierwszy dzień to Monday - poniedziałek';
+			}else if(numer == 2){
+				info = 'Drugi dzień to Tuesday - wtorek';
+			}else if(numer == 3){
+				info = 'Trzeci dzień to Wednesday - środa';
+			}else if(numer == 4){
+				info = 'Czwarty dzień to Thursday - czwartek';
+			}else if(numer == 5){
+				info = 'Piąty dzień to Friday - piątek';
+				document.getElementById("wynik").style.color = "yellow";
+			}else if(numer == 6){
+				info = 'Szósty dzień to Saturday - sobota';
+				document.getElementById("wynik").style.color = "green";
+			}else if(numer == 7){
+				info = 'Ostatni dzień to Sunday - niedziela';
+				document.getElementById("wynik").style.color = "green";
+			}else{
+				info = 'To nie jest prawidłowy numer dnia tygodnia!';
+				document.getElementById("wynik").style.color = "red";
+			}
+
+		
+			document.getElementById("wynik").innerHTML = info;
+
+		}
+
+	</script>
+
+</body>
+</html>

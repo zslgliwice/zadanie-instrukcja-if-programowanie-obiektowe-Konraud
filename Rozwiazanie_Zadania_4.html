@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Zadanie 4</title>
+	<link href="arkusz-cwiczenia.css" rel="stylesheet">
+	
+</head>
+
+<body>
+
+	<label> a = <input type="number" id="a"> </label>
+	<label> b = <input type="number" id="b"> </label>
+	<label> c = <input type="number" id="c"> </label>
+
+	<input type="submit" value="Informacje o liczbach" onclick="matematyka()">
+
+	<div id="wynik"></div>
+	
+	<script>
+	
+		function matematyka(){
+			var a = parseFloat(document.getElementById('a').value);
+			var b = parseFloat(document.getElementById('b').value);
+			var c = parseFloat(document.getElementById('c').value);
+
+			var najm = Math.min(a, b, c);
+			var najw = Math.max(a, b, c);
+			var bezwzglA = Math.abs(a);
+			var bezwzglB = Math.abs(b);
+			var bezwzglC = Math.abs(c);
+			var parzA = (a % 2 === 0) ? 'parzysta' : 'nieparzysta';
+			var parzB = (b % 2 === 0) ? 'parzysta' : 'nieparzysta';
+			var parzC = (c % 2 === 0) ? 'parzysta' : 'nieparzysta';
+
+			var wynik = document.getElementById("wynik");
+			wynik.innerHTML = `
+    		<p>Najmniejsza liczba: ${najm}</p>
+    		<p>Największa liczba: ${najw}</p>
+    		<p>Wartość bezwzględna a: ${bezwzglA}</p>
+    		<p>Wartość bezwzględna b: ${bezwzglB}</p>
+    		<p>Wartość bezwzględna c: ${bezwzglC}</p>
+    		<p>Liczba a jest: ${parzA}</p>
+    		<p>Liczba b jest: ${parzB}</p>
+    		<p>Liczba c jest: ${parzC}</p>`;
+		}
+
+	</script>
+
+</body>
+</html>

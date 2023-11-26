@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <title>Zadanie 5</title>
+    <link href="arkusz-cwiczenia.css" rel="stylesheet">
+</head>
+
+<body>
+    <label> Którą bramkę wybierasz: <input type="number" id="bramka" min="1" max="3"> </label>
+    <input type="submit" value="Wybieram bramkę" onclick="teleturniej()">
+    <div id="wynik"></div>
+
+    <script>
+        function teleturniej() {
+            var wybor = parseInt(document.getElementById("bramka").value);
+            var wynikDiv = document.getElementById("wynik");
+
+            if (wybor >= 1 && wybor <= 3) {
+                var lucky = Math.floor(Math.random() * 3) + 1;
+                var rezultat = (lucky === wybor) ? "Hurra! W bramce nr " + lucky + " jest samochód!" : "Niestety! Samochód znajdował się w bramce nr " + lucky + "...";
+                wynikDiv.innerHTML = rezultat;
+            } else {
+                wynikDiv.innerHTML = "Błąd! Wybierz bramkę od 1 do 3.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
